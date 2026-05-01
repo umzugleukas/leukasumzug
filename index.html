@@ -10,8 +10,8 @@ body{margin:0;font-family:Arial;background:#f8fafc;color:#111}
 header{padding:80px 20px;background:linear-gradient(135deg,#0f172a,#1e293b);color:white;text-align:center}
 h1{font-size:48px;margin:0}
 .logo{font-size:34px;font-weight:bold}
-.logo .leukas{color:#22c55e}
-.logo .umzug{color:#38bdf8}
+.logo .leukas{background:linear-gradient(90deg,#22c55e,#4ade80);-webkit-background-clip:text;color:transparent}
+.logo .umzug{background:linear-gradient(90deg,#38bdf8,#60a5fa);-webkit-background-clip:text;color:transparent}
 .big{
 font-size:70px;
 color:#22c55e;
@@ -26,7 +26,9 @@ margin-top:20px;
 .btn{display:inline-block;margin:10px;padding:15px 30px;background:#22c55e;color:black;border-radius:10px;text-decoration:none;font-weight:bold}
 .section{padding:60px 20px;text-align:center}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;max-width:1100px;margin:auto}
-.card{background:white;border-radius:15px;padding:25px;box-shadow:0 10px 25px rgba(0,0,0,0.1);cursor:pointer;transition:0.3s}
+.card{
+position:relative;
+z-index:1;background:white;border-radius:15px;padding:25px;box-shadow:0 10px 25px rgba(0,0,0,0.1);cursor:pointer;transition:0.3s}
 .card:hover{transform:translateY(-10px)}
 form{display:none;margin-top:20px}
 input,textarea{width:90%;padding:12px;margin:8px;border-radius:8px;border:1px solid #ccc}
@@ -39,8 +41,17 @@ button{padding:12px 25px;background:#22c55e;border:none;border-radius:10px;font-
 
 <script>
 function toggleForm(id){
- let f=document.getElementById(id);
- f.style.display = f.style.display==='block'?'none':'block';
+  const forms = document.querySelectorAll('form');
+  forms.forEach(f => {
+    if(f.id !== id){ f.style.display = 'none'; }
+  });
+
+  const el = document.getElementById(id);
+  if(el.style.display === 'block'){
+    el.style.display = 'none';
+  } else {
+    el.style.display = 'block';
+  }
 }
 </script>
 
