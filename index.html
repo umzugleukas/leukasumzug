@@ -47,6 +47,18 @@ function toggleForm(id){
   });
 
   const el = document.getElementById(id);
+  el.style.display = 'block';
+}
+
+// prevent form clicks from closing
+window.addEventListener('click', function(e){
+  if(e.target.closest('form')){
+    e.stopPropagation();
+  }
+});
+  });
+
+  const el = document.getElementById(id);
   if(el.style.display === 'block'){
     el.style.display = 'none';
   } else {
@@ -74,7 +86,10 @@ function toggleForm(id){
 <h2>Unsere Kategorien</h2>
 <div class="grid">
 
-<div class="card" onclick="toggleForm('ikea')">
+<div class="card">
+<h3>🛒 IKEA Heerlen</h3>
+<p>In de Cramer 142, 6412 PM Heerlen</p>
+<button onclick="toggleForm('ikea')">Form öffnen</button>
 <h3>🛒 IKEA Heerlen</h3>
 <p>In de Cramer 142, 6412 PM Heerlen</p>
 <form id="ikea">
@@ -87,7 +102,10 @@ function toggleForm(id){
 </form>
 </div>
 
-<div class="card" onclick="toggleForm('poco')">
+<div class="card">
+<h3>🏬 Poco Aachen</h3>
+<p>Gut-Dämme-Straße 26, 52070 Aachen</p>
+<button onclick="toggleForm('poco')">Form öffnen</button>
 <h3>🏬 Poco Aachen</h3>
 <p>Gut-Dämme-Straße 26, 52070 Aachen</p>
 <form id="poco">
@@ -100,7 +118,10 @@ function toggleForm(id){
 </form>
 </div>
 
-<div class="card" onclick="toggleForm('klein')">
+<div class="card">
+<h3>📦 Kleinanzeigen</h3>
+<p>Privat gekaufte Möbel transportieren</p>
+<button onclick="toggleForm('klein')">Form öffnen</button>
 <h3>📦 Kleinanzeigen</h3>
 <p>Privat gekaufte Möbel transportieren</p>
 <form id="klein">
@@ -114,7 +135,10 @@ function toggleForm(id){
 </form>
 </div>
 
-<div class="card" onclick="toggleForm('umzug')">
+<div class="card">
+<h3>🏠 Komplett Umzug</h3>
+<p>Neue Wohnung? Wir helfen komplett</p>
+<button onclick="toggleForm('umzug')">Form öffnen</button>
 <h3>🏠 Komplett Umzug</h3>
 <p>Neue Wohnung? Wir helfen komplett</p>
 <form id="umzug">
@@ -129,7 +153,10 @@ function toggleForm(id){
 </form>
 </div>
 
-<div class="card" onclick="toggleForm('custom')">
+<div class="card">
+<h3>🧾 Andere Möbelhäuser</h3>
+<p>Möbel von unbekannten oder kleineren Shops</p>
+<button onclick="toggleForm('custom')">Form öffnen</button>
 <h3>🧾 Andere Möbelhäuser</h3>
 <p>Möbel von unbekannten oder kleineren Shops</p>
 <form id="custom">
