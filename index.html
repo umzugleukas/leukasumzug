@@ -62,7 +62,7 @@ function toggleForm(id){
 <input placeholder="Telefon">
 <input placeholder="Lieferadresse">
 <input placeholder="Stockwerk">
-<input type="file">
+<label>Foto der zu transportierenden Möbel hochladen</label><br><input type="file">
 <button>Senden</button>
 </form>
 </div>
@@ -75,7 +75,7 @@ function toggleForm(id){
 <input placeholder="Telefon">
 <input placeholder="Lieferadresse">
 <input placeholder="Stockwerk">
-<input type="file">
+<label>Foto der zu transportierenden Möbel hochladen</label><br><input type="file">
 <button>Senden</button>
 </form>
 </div>
@@ -89,7 +89,7 @@ function toggleForm(id){
 <input placeholder="Abholung Adresse">
 <input placeholder="Liefer Adresse">
 <input placeholder="Stockwerk">
-<input type="file">
+<label>Foto der zu transportierenden Möbel hochladen</label><br><input type="file">
 <button>Senden</button>
 </form>
 </div>
@@ -104,6 +104,21 @@ function toggleForm(id){
 <input placeholder="Neue Adresse">
 <input placeholder="Stockwerk">
 <textarea placeholder="Was wird transportiert?"></textarea>
+<label>Foto der zu transportierenden Möbel hochladen</label><br><input type="file">
+<button>Senden</button>
+</form>
+</div>
+
+<div class="card" onclick="toggleForm('custom')">
+<h3>🧾 Andere Möbelhäuser</h3>
+<p>Möbel von unbekannten oder kleineren Shops</p>
+<form id="custom">
+<input placeholder="Name">
+<input placeholder="Telefon">
+<input placeholder="Abholung Adresse">
+<input placeholder="Liefer Adresse">
+<input placeholder="Stockwerk">
+<label>Foto der zu transportierenden Möbel hochladen</label><br>
 <input type="file">
 <button>Senden</button>
 </form>
