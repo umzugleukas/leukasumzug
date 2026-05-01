@@ -9,7 +9,7 @@
 body{
 margin:0;
 font-family:'Inter',sans-serif;
-background:#f5f7fa;
+background:#f4f7fb;
 text-align:center;
 }
 
@@ -21,17 +21,27 @@ padding:60px 20px;
 }
 
 .logo{
-font-size:36px;
-font-weight:bold;
+font-size:40px;
+font-weight:800;
 }
 
-.logo .l{color:#6366f1;}
-.logo .u{color:#06b6d4;}
+.logo .l{
+background:linear-gradient(90deg,#7c3aed,#6366f1);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.logo .u{
+background:linear-gradient(90deg,#06b6d4,#3b82f6);
+-webkit-background-clip:text;
+color:transparent;
+}
 
 .big{
-font-size:60px;
+font-size:65px;
 color:#22c55e;
 animation:pulse 1.5s infinite;
+margin-top:20px;
 }
 
 @keyframes pulse{
@@ -46,7 +56,7 @@ animation:pulse 1.5s infinite;
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
+gap:25px;
 max-width:1100px;
 margin:auto;
 }
@@ -56,12 +66,14 @@ margin:auto;
 background:white;
 padding:25px;
 border-radius:15px;
-box-shadow:0 10px 20px rgba(0,0,0,0.1);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 cursor:pointer;
 transition:0.3s;
 }
 
-.card:hover{transform:translateY(-8px);}
+.card:hover{
+transform:translateY(-8px);
+}
 
 /* FORM */
 .form-box{
@@ -70,16 +82,17 @@ background:white;
 padding:20px;
 margin:10px auto 30px;
 max-width:400px;
-border-radius:10px;
-box-shadow:0 10px 20px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
 input,textarea{
 width:90%;
-padding:10px;
+padding:12px;
 margin:8px;
 border-radius:8px;
 border:1px solid #ccc;
+font-size:14px;
 }
 
 button{
@@ -108,7 +121,7 @@ el.style.display = el.style.display === "block" ? "none" : "block";
 </script>
 
 </head>
-https://formspree.io/f/mnjwnbbz
+
 <body>
 
 <header>
@@ -129,15 +142,17 @@ https://formspree.io/f/mnjwnbbz
 <p>In de Cramer 142, 6412 PM Heerlen</p>
 </div>
 
-<div id="ikea" class="form-box">
-<input placeholder="Name">
-<input placeholder="Telefon">
-<input placeholder="Lieferadresse">
-<input placeholder="Stockwerk">
+<form id="ikea" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST" enctype="multipart/form-data">
+<input name="Kategorie" value="IKEA Heerlen" type="hidden">
+<input name="Name" placeholder="Name" required>
+<input name="Telefon" placeholder="Telefon" required>
+<input name="Lieferadresse" placeholder="Lieferadresse">
+<input name="Stockwerk" placeholder="Stockwerk">
 <label>Foto der Möbel hochladen</label><br>
-<input type="file">
-<button>Senden</button>
-</div>
+<input type="file" name="file">
+<input type="hidden" name="_next" value="https://leukasumzug.com">
+<button type="submit">Senden</button>
+</form>
 </div>
 
 <!-- POCO -->
@@ -147,15 +162,16 @@ https://formspree.io/f/mnjwnbbz
 <p>Gut-Dämme-Straße 26, 52070 Aachen</p>
 </div>
 
-<div id="poco" class="form-box">
-<input placeholder="Name">
-<input placeholder="Telefon">
-<input placeholder="Lieferadresse">
-<input placeholder="Stockwerk">
-<label>Foto der Möbel hochladen</label><br>
-<input type="file">
-<button>Senden</button>
-</div>
+<form id="poco" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST" enctype="multipart/form-data">
+<input name="Kategorie" value="Poco Aachen" type="hidden">
+<input name="Name" placeholder="Name" required>
+<input name="Telefon" placeholder="Telefon" required>
+<input name="Lieferadresse" placeholder="Lieferadresse">
+<input name="Stockwerk" placeholder="Stockwerk">
+<input type="file" name="file">
+<input type="hidden" name="_next" value="https://leukasumzug.com">
+<button type="submit">Senden</button>
+</form>
 </div>
 
 <!-- KLEIN -->
@@ -165,15 +181,17 @@ https://formspree.io/f/mnjwnbbz
 <p>Privat gekaufte Möbel transportieren</p>
 </div>
 
-<div id="klein" class="form-box">
-<input placeholder="Name">
-<input placeholder="Telefon">
-<input placeholder="Abholung Adresse">
-<input placeholder="Liefer Adresse">
-<input placeholder="Stockwerk">
-<input type="file">
-<button>Senden</button>
-</div>
+<form id="klein" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST" enctype="multipart/form-data">
+<input name="Kategorie" value="Kleinanzeigen" type="hidden">
+<input name="Name" placeholder="Name" required>
+<input name="Telefon" placeholder="Telefon" required>
+<input name="Abholung" placeholder="Abholung Adresse">
+<input name="Lieferung" placeholder="Liefer Adresse">
+<input name="Stockwerk" placeholder="Stockwerk">
+<input type="file" name="file">
+<input type="hidden" name="_next" value="https://leukasumzug.com">
+<button type="submit">Senden</button>
+</form>
 </div>
 
 <!-- UMZUG -->
@@ -183,16 +201,18 @@ https://formspree.io/f/mnjwnbbz
 <p>Neue Wohnung? Wir helfen komplett</p>
 </div>
 
-<div id="umzug" class="form-box">
-<input placeholder="Name">
-<input placeholder="Telefon">
-<input placeholder="Alte Adresse">
-<input placeholder="Neue Adresse">
-<input placeholder="Stockwerk">
-<textarea placeholder="Details"></textarea>
-<input type="file">
-<button>Senden</button>
-</div>
+<form id="umzug" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST" enctype="multipart/form-data">
+<input name="Kategorie" value="Komplett Umzug" type="hidden">
+<input name="Name" placeholder="Name" required>
+<input name="Telefon" placeholder="Telefon" required>
+<input name="Alte Adresse" placeholder="Alte Adresse">
+<input name="Neue Adresse" placeholder="Neue Adresse">
+<input name="Stockwerk" placeholder="Stockwerk">
+<textarea name="Details" placeholder="Details"></textarea>
+<input type="file" name="file">
+<input type="hidden" name="_next" value="https://leukasumzug.com">
+<button type="submit">Senden</button>
+</form>
 </div>
 
 <!-- CUSTOM -->
@@ -202,15 +222,17 @@ https://formspree.io/f/mnjwnbbz
 <p>Möbel von kleinen oder unbekannten Shops</p>
 </div>
 
-<div id="custom" class="form-box">
-<input placeholder="Name">
-<input placeholder="Telefon">
-<input placeholder="Abholung">
-<input placeholder="Lieferung">
-<input placeholder="Stockwerk">
-<input type="file">
-<button>Senden</button>
-</div>
+<form id="custom" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST" enctype="multipart/form-data">
+<input name="Kategorie" value="Andere Möbelhäuser" type="hidden">
+<input name="Name" placeholder="Name" required>
+<input name="Telefon" placeholder="Telefon" required>
+<input name="Abholung" placeholder="Abholung">
+<input name="Lieferung" placeholder="Lieferung">
+<input name="Stockwerk" placeholder="Stockwerk">
+<input type="file" name="file">
+<input type="hidden" name="_next" value="https://leukasumzug.com">
+<button type="submit">Senden</button>
+</form>
 </div>
 
 </div>
