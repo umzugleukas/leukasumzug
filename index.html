@@ -25,14 +25,15 @@ font-size:44px;
 font-weight:800;
 }
 
+/* YENİ MODERN LOGO */
 .logo .l{
-background:linear-gradient(90deg,#8b5cf6,#6366f1);
+background:linear-gradient(90deg,#ff512f,#dd2476);
 -webkit-background-clip:text;
 color:transparent;
 }
 
 .logo .u{
-background:linear-gradient(90deg,#06b6d4,#3b82f6);
+background:linear-gradient(90deg,#22c55e,#4ade80);
 -webkit-background-clip:text;
 color:transparent;
 }
@@ -48,6 +49,27 @@ animation:pulse 1.5s infinite;
 50%{transform:scale(1.1)}
 100%{transform:scale(1)}
 }
+
+/* CTA BUTTONS */
+.cta-buttons{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.cta-buttons a{
+padding:12px 20px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+color:white;
+}
+
+.call-btn{background:#ef4444;}
+.wa-btn{background:#25D366;}
+.mail-btn{background:#3b82f6;}
 
 /* GRID */
 .section{padding:50px 20px;}
@@ -69,9 +91,7 @@ cursor:pointer;
 transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-8px);
-}
+.card:hover{transform:translateY(-8px);}
 
 /* FORM */
 .form-box{
@@ -144,6 +164,12 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 <div class="logo">🚛 <span class="l">Leukas</span><span class="u">Umzug</span></div>
 <h1>Günstig • Schnell • Am selben Tag möglich</h1>
 <div class="big">SEHR GÜNSTIG</div>
+
+<div class="cta-buttons">
+<a href="tel:+491704063762" class="call-btn">📞 Anrufen</a>
+<a href="https://wa.me/491704063762" target="_blank" class="wa-btn">💬 WhatsApp</a>
+<a href="mailto:Leukasumzug@gmail.com" class="mail-btn">✉️ Email</a>
+</div>
 </header>
 
 <div class="section">
@@ -164,7 +190,6 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 <input placeholder="Lieferadresse">
 <input placeholder="Stockwerk">
 <textarea placeholder="Details"></textarea>
-
 <button onclick="sendWhatsApp('ikea','IKEA Heerlen')">
 📲 Anfrage per WhatsApp senden
 </button>
@@ -184,7 +209,6 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 <input placeholder="Lieferadresse">
 <input placeholder="Stockwerk">
 <textarea placeholder="Details"></textarea>
-
 <button onclick="sendWhatsApp('poco','Poco Aachen')">
 📲 Anfrage per WhatsApp senden
 </button>
@@ -204,7 +228,6 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 <input placeholder="Abholung Adresse">
 <input placeholder="Liefer Adresse">
 <input placeholder="Stockwerk">
-
 <button onclick="sendWhatsApp('klein','Kleinanzeigen')">
 📲 Anfrage per WhatsApp senden
 </button>
@@ -225,7 +248,6 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 <input placeholder="Neue Adresse">
 <input placeholder="Stockwerk">
 <textarea placeholder="Details"></textarea>
-
 <button onclick="sendWhatsApp('umzug','Komplett Umzug')">
 📲 Anfrage per WhatsApp senden
 </button>
@@ -245,7 +267,6 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 <input placeholder="Abholung">
 <input placeholder="Lieferung">
 <input placeholder="Stockwerk">
-
 <button onclick="sendWhatsApp('custom','Andere Möbelhäuser')">
 📲 Anfrage per WhatsApp senden
 </button>
