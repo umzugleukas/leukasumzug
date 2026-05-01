@@ -13,31 +13,32 @@ background:#f4f7fb;
 text-align:center;
 }
 
+/* HEADER */
 header{
-background:linear-gradient(135deg,#0f172a,#1e293b);
+background:linear-gradient(135deg,#020617,#0f172a);
 color:white;
 padding:60px 20px;
 }
 
 .logo{
-font-size:42px;
+font-size:44px;
 font-weight:800;
 }
 
 .logo .l{
-background:linear-gradient(90deg,#ff7a18,#ff3d3d);
+background:linear-gradient(90deg,#8b5cf6,#6366f1);
 -webkit-background-clip:text;
 color:transparent;
 }
 
 .logo .u{
-background:linear-gradient(90deg,#00f2fe,#4facfe);
+background:linear-gradient(90deg,#06b6d4,#3b82f6);
 -webkit-background-clip:text;
 color:transparent;
 }
 
 .big{
-font-size:60px;
+font-size:65px;
 color:#22c55e;
 animation:pulse 1.5s infinite;
 }
@@ -48,6 +49,7 @@ animation:pulse 1.5s infinite;
 100%{transform:scale(1)}
 }
 
+/* GRID */
 .section{padding:50px 20px;}
 
 .grid{
@@ -67,8 +69,11 @@ cursor:pointer;
 transition:0.3s;
 }
 
-.card:hover{transform:translateY(-8px);}
+.card:hover{
+transform:translateY(-8px);
+}
 
+/* FORM */
 .form-box{
 display:none;
 background:white;
@@ -89,19 +94,15 @@ border:1px solid #ccc;
 
 button{
 padding:12px 25px;
-background:#22c55e;
+background:#25D366;
 border:none;
 border-radius:10px;
 font-weight:bold;
 cursor:pointer;
-}
-
-.whatsapp{
-background:#25D366;
 color:white;
-margin-top:10px;
 }
 
+/* FOOTER */
 footer{
 background:#020617;
 color:white;
@@ -116,18 +117,20 @@ const el = document.getElementById(id);
 el.style.display = el.style.display === "block" ? "none" : "block";
 }
 
-// WhatsApp mesaj oluşturma
-function sendWhatsApp(formId){
+function sendWhatsApp(formId, category){
 let form = document.getElementById(formId);
 let inputs = form.querySelectorAll("input, textarea");
 
-let message = "Hallo LeukasUmzug,%0A";
+let message = "🚛 *Leukas Umzug Anfrage*%0A";
+message += "📦 Kategorie: " + category + "%0A%0A";
 
 inputs.forEach(i=>{
 if(i.value){
-message += i.placeholder + ": " + i.value + "%0A";
+message += "➡️ " + i.placeholder + ": " + i.value + "%0A";
 }
 });
+
+message += "%0A📸 Fotos sende ich gleich hier.";
 
 window.open("https://wa.me/491704063762?text=" + message, "_blank");
 }
@@ -162,8 +165,8 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 <input placeholder="Stockwerk">
 <textarea placeholder="Details"></textarea>
 
-<button onclick="sendWhatsApp('ikea')" class="whatsapp">
-📲 Per WhatsApp senden (Foto ekleyebilirsin)
+<button onclick="sendWhatsApp('ikea','IKEA Heerlen')">
+📲 Anfrage per WhatsApp senden
 </button>
 </div>
 </div>
@@ -182,8 +185,8 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 <input placeholder="Stockwerk">
 <textarea placeholder="Details"></textarea>
 
-<button onclick="sendWhatsApp('poco')" class="whatsapp">
-📲 Per WhatsApp senden
+<button onclick="sendWhatsApp('poco','Poco Aachen')">
+📲 Anfrage per WhatsApp senden
 </button>
 </div>
 </div>
@@ -202,8 +205,8 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 <input placeholder="Liefer Adresse">
 <input placeholder="Stockwerk">
 
-<button onclick="sendWhatsApp('klein')" class="whatsapp">
-📲 Per WhatsApp senden
+<button onclick="sendWhatsApp('klein','Kleinanzeigen')">
+📲 Anfrage per WhatsApp senden
 </button>
 </div>
 </div>
@@ -223,8 +226,8 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 <input placeholder="Stockwerk">
 <textarea placeholder="Details"></textarea>
 
-<button onclick="sendWhatsApp('umzug')" class="whatsapp">
-📲 Per WhatsApp senden
+<button onclick="sendWhatsApp('umzug','Komplett Umzug')">
+📲 Anfrage per WhatsApp senden
 </button>
 </div>
 </div>
@@ -243,8 +246,8 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 <input placeholder="Lieferung">
 <input placeholder="Stockwerk">
 
-<button onclick="sendWhatsApp('custom')" class="whatsapp">
-📲 Per WhatsApp senden
+<button onclick="sendWhatsApp('custom','Andere Möbelhäuser')">
+📲 Anfrage per WhatsApp senden
 </button>
 </div>
 </div>
