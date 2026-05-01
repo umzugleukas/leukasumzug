@@ -13,7 +13,6 @@ background:#f4f7fb;
 text-align:center;
 }
 
-/* HEADER */
 header{
 background:linear-gradient(135deg,#0f172a,#1e293b);
 color:white;
@@ -23,7 +22,6 @@ padding:60px 20px;
 .logo{
 font-size:42px;
 font-weight:800;
-text-shadow:0 0 10px rgba(255,255,255,0.2);
 }
 
 .logo .l{
@@ -39,7 +37,7 @@ color:transparent;
 }
 
 .big{
-font-size:65px;
+font-size:60px;
 color:#22c55e;
 animation:pulse 1.5s infinite;
 }
@@ -50,7 +48,6 @@ animation:pulse 1.5s infinite;
 100%{transform:scale(1)}
 }
 
-/* GRID */
 .section{padding:50px 20px;}
 
 .grid{
@@ -61,7 +58,6 @@ max-width:1100px;
 margin:auto;
 }
 
-/* CARD */
 .card{
 background:white;
 padding:25px;
@@ -71,11 +67,8 @@ cursor:pointer;
 transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-8px);
-}
+.card:hover{transform:translateY(-8px);}
 
-/* FORM */
 .form-box{
 display:none;
 background:white;
@@ -103,7 +96,12 @@ font-weight:bold;
 cursor:pointer;
 }
 
-/* FOOTER */
+.whatsapp{
+background:#25D366;
+color:white;
+margin-top:10px;
+}
+
 footer{
 background:#020617;
 color:white;
@@ -116,6 +114,22 @@ margin-top:40px;
 function toggleForm(id){
 const el = document.getElementById(id);
 el.style.display = el.style.display === "block" ? "none" : "block";
+}
+
+// WhatsApp mesaj oluşturma
+function sendWhatsApp(formId){
+let form = document.getElementById(formId);
+let inputs = form.querySelectorAll("input, textarea");
+
+let message = "Hallo LeukasUmzug,%0A";
+
+inputs.forEach(i=>{
+if(i.value){
+message += i.placeholder + ": " + i.value + "%0A";
+}
+});
+
+window.open("https://wa.me/491704063762?text=" + message, "_blank");
 }
 </script>
 
@@ -141,16 +155,17 @@ el.style.display = el.style.display === "block" ? "none" : "block";
 <p>In de Cramer 142, 6412 PM Heerlen</p>
 </div>
 
-<form id="ikea" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST">
-<input type="hidden" name="Kategorie" value="IKEA Heerlen">
-<input name="Name" placeholder="Name" required>
-<input name="Telefon" placeholder="Telefon" required>
-<input name="Lieferadresse" placeholder="Lieferadresse">
-<input name="Stockwerk" placeholder="Stockwerk">
-<input name="Foto Link" placeholder="Foto Link (WhatsApp / Drive)">
-<input type="hidden" name="_next" value="https://leukasumzug.com">
-<button type="submit">Senden</button>
-</form>
+<div id="ikea" class="form-box">
+<input placeholder="Name">
+<input placeholder="Telefon">
+<input placeholder="Lieferadresse">
+<input placeholder="Stockwerk">
+<textarea placeholder="Details"></textarea>
+
+<button onclick="sendWhatsApp('ikea')" class="whatsapp">
+📲 Per WhatsApp senden (Foto ekleyebilirsin)
+</button>
+</div>
 </div>
 
 <!-- POCO -->
@@ -160,16 +175,17 @@ el.style.display = el.style.display === "block" ? "none" : "block";
 <p>Gut-Dämme-Straße 26, 52070 Aachen</p>
 </div>
 
-<form id="poco" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST">
-<input type="hidden" name="Kategorie" value="Poco Aachen">
-<input name="Name" placeholder="Name" required>
-<input name="Telefon" placeholder="Telefon" required>
-<input name="Lieferadresse" placeholder="Lieferadresse">
-<input name="Stockwerk" placeholder="Stockwerk">
-<input name="Foto Link" placeholder="Foto Link">
-<input type="hidden" name="_next" value="https://leukasumzug.com">
-<button type="submit">Senden</button>
-</form>
+<div id="poco" class="form-box">
+<input placeholder="Name">
+<input placeholder="Telefon">
+<input placeholder="Lieferadresse">
+<input placeholder="Stockwerk">
+<textarea placeholder="Details"></textarea>
+
+<button onclick="sendWhatsApp('poco')" class="whatsapp">
+📲 Per WhatsApp senden
+</button>
+</div>
 </div>
 
 <!-- KLEIN -->
@@ -179,17 +195,17 @@ el.style.display = el.style.display === "block" ? "none" : "block";
 <p>Privat gekaufte Möbel transportieren</p>
 </div>
 
-<form id="klein" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST">
-<input type="hidden" name="Kategorie" value="Kleinanzeigen">
-<input name="Name" placeholder="Name" required>
-<input name="Telefon" placeholder="Telefon" required>
-<input name="Abholung" placeholder="Abholung Adresse">
-<input name="Lieferung" placeholder="Liefer Adresse">
-<input name="Stockwerk" placeholder="Stockwerk">
-<input name="Foto Link" placeholder="Foto Link">
-<input type="hidden" name="_next" value="https://leukasumzug.com">
-<button type="submit">Senden</button>
-</form>
+<div id="klein" class="form-box">
+<input placeholder="Name">
+<input placeholder="Telefon">
+<input placeholder="Abholung Adresse">
+<input placeholder="Liefer Adresse">
+<input placeholder="Stockwerk">
+
+<button onclick="sendWhatsApp('klein')" class="whatsapp">
+📲 Per WhatsApp senden
+</button>
+</div>
 </div>
 
 <!-- UMZUG -->
@@ -199,18 +215,18 @@ el.style.display = el.style.display === "block" ? "none" : "block";
 <p>Neue Wohnung? Wir helfen komplett</p>
 </div>
 
-<form id="umzug" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST">
-<input type="hidden" name="Kategorie" value="Komplett Umzug">
-<input name="Name" placeholder="Name" required>
-<input name="Telefon" placeholder="Telefon" required>
-<input name="Alte Adresse" placeholder="Alte Adresse">
-<input name="Neue Adresse" placeholder="Neue Adresse">
-<input name="Stockwerk" placeholder="Stockwerk">
-<textarea name="Details" placeholder="Details"></textarea>
-<input name="Foto Link" placeholder="Foto Link">
-<input type="hidden" name="_next" value="https://leukasumzug.com">
-<button type="submit">Senden</button>
-</form>
+<div id="umzug" class="form-box">
+<input placeholder="Name">
+<input placeholder="Telefon">
+<input placeholder="Alte Adresse">
+<input placeholder="Neue Adresse">
+<input placeholder="Stockwerk">
+<textarea placeholder="Details"></textarea>
+
+<button onclick="sendWhatsApp('umzug')" class="whatsapp">
+📲 Per WhatsApp senden
+</button>
+</div>
 </div>
 
 <!-- CUSTOM -->
@@ -220,17 +236,17 @@ el.style.display = el.style.display === "block" ? "none" : "block";
 <p>Möbel von kleinen oder unbekannten Shops</p>
 </div>
 
-<form id="custom" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST">
-<input type="hidden" name="Kategorie" value="Andere Möbelhäuser">
-<input name="Name" placeholder="Name" required>
-<input name="Telefon" placeholder="Telefon" required>
-<input name="Abholung" placeholder="Abholung">
-<input name="Lieferung" placeholder="Lieferung">
-<input name="Stockwerk" placeholder="Stockwerk">
-<input name="Foto Link" placeholder="Foto Link">
-<input type="hidden" name="_next" value="https://leukasumzug.com">
-<button type="submit">Senden</button>
-</form>
+<div id="custom" class="form-box">
+<input placeholder="Name">
+<input placeholder="Telefon">
+<input placeholder="Abholung">
+<input placeholder="Lieferung">
+<input placeholder="Stockwerk">
+
+<button onclick="sendWhatsApp('custom')" class="whatsapp">
+📲 Per WhatsApp senden
+</button>
+</div>
 </div>
 
 </div>
