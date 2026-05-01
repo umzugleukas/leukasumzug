@@ -25,12 +25,8 @@ font-size:36px;
 font-weight:bold;
 }
 
-.logo .l{
-color:#6366f1;
-}
-.logo .u{
-color:#06b6d4;
-}
+.logo .l{color:#6366f1;}
+.logo .u{color:#06b6d4;}
 
 .big{
 font-size:60px;
@@ -45,9 +41,7 @@ animation:pulse 1.5s infinite;
 }
 
 /* GRID */
-.section{
-padding:50px 20px;
-}
+.section{padding:50px 20px;}
 
 .grid{
 display:grid;
@@ -57,6 +51,7 @@ max-width:1100px;
 margin:auto;
 }
 
+/* CARD */
 .card{
 background:white;
 padding:25px;
@@ -66,16 +61,14 @@ cursor:pointer;
 transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-8px);
-}
+.card:hover{transform:translateY(-8px);}
 
 /* FORM */
 .form-box{
 display:none;
 background:white;
 padding:20px;
-margin:20px auto;
+margin:10px auto 30px;
 max-width:400px;
 border-radius:10px;
 box-shadow:0 10px 20px rgba(0,0,0,0.1);
@@ -109,8 +102,8 @@ margin-top:40px;
 
 <script>
 function toggleForm(id){
-document.querySelectorAll(".form-box").forEach(f=>f.style.display="none");
-document.getElementById(id).style.display="block";
+const el = document.getElementById(id);
+el.style.display = el.style.display === "block" ? "none" : "block";
 }
 </script>
 
@@ -129,72 +122,68 @@ document.getElementById(id).style.display="block";
 
 <div class="grid">
 
+<!-- IKEA -->
+<div>
 <div class="card" onclick="toggleForm('ikea')">
 <h3>🛒 IKEA Heerlen</h3>
 <p>In de Cramer 142, 6412 PM Heerlen</p>
 </div>
 
+<div id="ikea" class="form-box">
+<input placeholder="Name">
+<input placeholder="Telefon">
+<input placeholder="Lieferadresse">
+<input placeholder="Stockwerk">
+<label>Foto der Möbel hochladen</label><br>
+<input type="file">
+<button>Senden</button>
+</div>
+</div>
+
+<!-- POCO -->
+<div>
 <div class="card" onclick="toggleForm('poco')">
 <h3>🏬 Poco Aachen</h3>
 <p>Gut-Dämme-Straße 26, 52070 Aachen</p>
 </div>
 
+<div id="poco" class="form-box">
+<input placeholder="Name">
+<input placeholder="Telefon">
+<input placeholder="Lieferadresse">
+<input placeholder="Stockwerk">
+<label>Foto der Möbel hochladen</label><br>
+<input type="file">
+<button>Senden</button>
+</div>
+</div>
+
+<!-- KLEIN -->
+<div>
 <div class="card" onclick="toggleForm('klein')">
 <h3>📦 Kleinanzeigen</h3>
 <p>Privat gekaufte Möbel transportieren</p>
 </div>
 
-<div class="card" onclick="toggleForm('umzug')">
-<h3>🏠 Komplett Umzug</h3>
-<p>Neue Wohnung? Wir helfen komplett</p>
-</div>
-
-<div class="card" onclick="toggleForm('custom')">
-<h3>🧾 Andere Möbelhäuser</h3>
-<p>Möbel von kleinen oder unbekannten Shops</p>
-</div>
-
-</div>
-</div>
-
-<!-- FORMLAR -->
-
-<div id="ikea" class="form-box">
-<h3>IKEA Auftrag</h3>
-<input placeholder="Name">
-<input placeholder="Telefon">
-<input placeholder="Lieferadresse">
-<input placeholder="Stockwerk">
-<label>Foto der Möbel hochladen</label><br>
-<input type="file">
-<button>Senden</button>
-</div>
-
-<div id="poco" class="form-box">
-<h3>Poco Auftrag</h3>
-<input placeholder="Name">
-<input placeholder="Telefon">
-<input placeholder="Lieferadresse">
-<input placeholder="Stockwerk">
-<label>Foto der Möbel hochladen</label><br>
-<input type="file">
-<button>Senden</button>
-</div>
-
 <div id="klein" class="form-box">
-<h3>Kleinanzeigen Auftrag</h3>
 <input placeholder="Name">
 <input placeholder="Telefon">
 <input placeholder="Abholung Adresse">
 <input placeholder="Liefer Adresse">
 <input placeholder="Stockwerk">
-<label>Foto hochladen</label><br>
 <input type="file">
 <button>Senden</button>
 </div>
+</div>
+
+<!-- UMZUG -->
+<div>
+<div class="card" onclick="toggleForm('umzug')">
+<h3>🏠 Komplett Umzug</h3>
+<p>Neue Wohnung? Wir helfen komplett</p>
+</div>
 
 <div id="umzug" class="form-box">
-<h3>Komplett Umzug</h3>
 <input placeholder="Name">
 <input placeholder="Telefon">
 <input placeholder="Alte Adresse">
@@ -204,9 +193,16 @@ document.getElementById(id).style.display="block";
 <input type="file">
 <button>Senden</button>
 </div>
+</div>
+
+<!-- CUSTOM -->
+<div>
+<div class="card" onclick="toggleForm('custom')">
+<h3>🧾 Andere Möbelhäuser</h3>
+<p>Möbel von kleinen oder unbekannten Shops</p>
+</div>
 
 <div id="custom" class="form-box">
-<h3>Andere Möbelhäuser</h3>
 <input placeholder="Name">
 <input placeholder="Telefon">
 <input placeholder="Abholung">
@@ -214,6 +210,10 @@ document.getElementById(id).style.display="block";
 <input placeholder="Stockwerk">
 <input type="file">
 <button>Senden</button>
+</div>
+</div>
+
+</div>
 </div>
 
 <footer>
