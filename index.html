@@ -13,7 +13,6 @@ background:#f4f7fb;
 text-align:center;
 }
 
-/* HEADER */
 header{
 background:linear-gradient(135deg,#020617,#0f172a);
 color:white;
@@ -25,7 +24,6 @@ font-size:44px;
 font-weight:800;
 }
 
-/* YENİ MODERN LOGO */
 .logo .l{
 background:linear-gradient(90deg,#ff512f,#dd2476);
 -webkit-background-clip:text;
@@ -50,7 +48,6 @@ animation:pulse 1.5s infinite;
 100%{transform:scale(1)}
 }
 
-/* CTA BUTTONS */
 .cta-buttons{
 margin-top:20px;
 display:flex;
@@ -71,7 +68,6 @@ color:white;
 .wa-btn{background:#25D366;}
 .mail-btn{background:#3b82f6;}
 
-/* GRID */
 .section{padding:50px 20px;}
 
 .grid{
@@ -93,7 +89,6 @@ transition:0.3s;
 
 .card:hover{transform:translateY(-8px);}
 
-/* FORM */
 .form-box{
 display:none;
 background:white;
@@ -122,7 +117,6 @@ cursor:pointer;
 color:white;
 }
 
-/* FOOTER */
 footer{
 background:#020617;
 color:white;
@@ -150,7 +144,7 @@ message += "➡️ " + i.placeholder + ": " + i.value + "%0A";
 }
 });
 
-message += "%0A📸 Fotos sende ich gleich hier.";
+message += "%0A📸 (Optional: Fotos können hier gesendet werden)";
 
 window.open("https://wa.me/491704063762?text=" + message, "_blank");
 }
@@ -177,70 +171,54 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 
 <div class="grid">
 
-<!-- IKEA -->
 <div>
 <div class="card" onclick="toggleForm('ikea')">
 <h3>🛒 IKEA Heerlen</h3>
 <p>In de Cramer 142, 6412 PM Heerlen</p>
 </div>
-
 <div id="ikea" class="form-box">
 <input placeholder="Name">
 <input placeholder="Telefon">
 <input placeholder="Lieferadresse">
 <input placeholder="Stockwerk">
 <textarea placeholder="Details"></textarea>
-<button onclick="sendWhatsApp('ikea','IKEA Heerlen')">
-📲 Anfrage per WhatsApp senden
-</button>
+<button onclick="sendWhatsApp('ikea','IKEA Heerlen')">📲 WhatsApp senden</button>
 </div>
 </div>
 
-<!-- POCO -->
 <div>
 <div class="card" onclick="toggleForm('poco')">
 <h3>🏬 Poco Aachen</h3>
 <p>Gut-Dämme-Straße 26, 52070 Aachen</p>
 </div>
-
 <div id="poco" class="form-box">
 <input placeholder="Name">
 <input placeholder="Telefon">
 <input placeholder="Lieferadresse">
 <input placeholder="Stockwerk">
 <textarea placeholder="Details"></textarea>
-<button onclick="sendWhatsApp('poco','Poco Aachen')">
-📲 Anfrage per WhatsApp senden
-</button>
+<button onclick="sendWhatsApp('poco','Poco Aachen')">📲 WhatsApp senden</button>
 </div>
 </div>
 
-<!-- KLEIN -->
 <div>
 <div class="card" onclick="toggleForm('klein')">
 <h3>📦 Kleinanzeigen</h3>
-<p>Privat gekaufte Möbel transportieren</p>
 </div>
-
 <div id="klein" class="form-box">
 <input placeholder="Name">
 <input placeholder="Telefon">
 <input placeholder="Abholung Adresse">
 <input placeholder="Liefer Adresse">
 <input placeholder="Stockwerk">
-<button onclick="sendWhatsApp('klein','Kleinanzeigen')">
-📲 Anfrage per WhatsApp senden
-</button>
+<button onclick="sendWhatsApp('klein','Kleinanzeigen')">📲 WhatsApp senden</button>
 </div>
 </div>
 
-<!-- UMZUG -->
 <div>
 <div class="card" onclick="toggleForm('umzug')">
 <h3>🏠 Komplett Umzug</h3>
-<p>Neue Wohnung? Wir helfen komplett</p>
 </div>
-
 <div id="umzug" class="form-box">
 <input placeholder="Name">
 <input placeholder="Telefon">
@@ -248,28 +226,21 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 <input placeholder="Neue Adresse">
 <input placeholder="Stockwerk">
 <textarea placeholder="Details"></textarea>
-<button onclick="sendWhatsApp('umzug','Komplett Umzug')">
-📲 Anfrage per WhatsApp senden
-</button>
+<button onclick="sendWhatsApp('umzug','Komplett Umzug')">📲 WhatsApp senden</button>
 </div>
 </div>
 
-<!-- CUSTOM -->
 <div>
 <div class="card" onclick="toggleForm('custom')">
 <h3>🧾 Andere Möbelhäuser</h3>
-<p>Möbel von kleinen oder unbekannten Shops</p>
 </div>
-
 <div id="custom" class="form-box">
 <input placeholder="Name">
 <input placeholder="Telefon">
 <input placeholder="Abholung">
 <input placeholder="Lieferung">
 <input placeholder="Stockwerk">
-<button onclick="sendWhatsApp('custom','Andere Möbelhäuser')">
-📲 Anfrage per WhatsApp senden
-</button>
+<button onclick="sendWhatsApp('custom','Andere Möbelhäuser')">📲 WhatsApp senden</button>
 </div>
 </div>
 
@@ -285,10 +256,10 @@ Email: Leukasumzug@gmail.com<br>
 Tel: +49 170 4063762</p>
 
 <p><b>AGB</b><br>
-Alle Transporte erfolgen nach Vereinbarung. Preise variieren je nach Aufwand.</p>
+Alle Transporte erfolgen nach Vereinbarung.</p>
 
 <p><b>Datenschutz</b><br>
-Ihre Daten werden nur zur Bearbeitung Ihrer Anfrage genutzt.</p>
+Ihre Daten werden nur zur Bearbeitung genutzt.</p>
 
 <p>© 2026 Leukasumzug</p>
 </footer>
