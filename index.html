@@ -9,7 +9,18 @@
 body{margin:0;font-family:Arial;background:#f8fafc;color:#111}
 header{padding:80px 20px;background:linear-gradient(135deg,#0f172a,#1e293b);color:white;text-align:center}
 h1{font-size:48px;margin:0}
-p{opacity:0.9}
+.logo{font-size:32px;font-weight:bold}
+.big{
+font-size:70px;
+color:#22c55e;
+animation:pulse 1.5s infinite;
+margin-top:20px;
+}
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.1)}
+100%{transform:scale(1)}
+}
 .btn{display:inline-block;margin:10px;padding:15px 30px;background:#22c55e;color:black;border-radius:10px;text-decoration:none;font-weight:bold}
 .section{padding:60px 20px;text-align:center}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;max-width:1100px;margin:auto}
@@ -32,8 +43,9 @@ function toggleForm(id){
 <body>
 
 <header>
-<h1>Leukasumzug</h1>
-<p>Günstig • Schnell • Am selben Tag möglich</p>
+<div class="logo">🚚 Leukasumzug</div>
+<h1>Günstig • Schnell • Am selben Tag möglich</h1>
+<div class="big">SEHR GÜNSTIG</div>
 <a class="btn" href="tel:+491704063762">📞 Anrufen</a>
 <a class="btn" href="https://wa.me/491704063762">💬 WhatsApp</a>
 </header>
@@ -43,12 +55,24 @@ function toggleForm(id){
 <div class="grid">
 
 <div class="card" onclick="toggleForm('ikea')">
-<h3>🛒 IKEA Transport</h3>
-<p>Neu gekaufte Möbel schnell liefern lassen</p>
+<h3>🛒 IKEA Heerlen</h3>
+<p>In de Cramer 142, 6412 PM Heerlen</p>
 <form id="ikea">
 <input placeholder="Name">
 <input placeholder="Telefon">
-<input placeholder="Abholung (IKEA)">
+<input placeholder="Lieferadresse">
+<input placeholder="Stockwerk">
+<input type="file">
+<button>Senden</button>
+</form>
+</div>
+
+<div class="card" onclick="toggleForm('poco')">
+<h3>🏬 Poco Aachen</h3>
+<p>Gut-Dämme-Straße 26, 52070 Aachen</p>
+<form id="poco">
+<input placeholder="Name">
+<input placeholder="Telefon">
 <input placeholder="Lieferadresse">
 <input placeholder="Stockwerk">
 <input type="file">
@@ -57,7 +81,7 @@ function toggleForm(id){
 </div>
 
 <div class="card" onclick="toggleForm('klein')">
-<h3>📦 Kleinanzeigen Transport</h3>
+<h3>📦 Kleinanzeigen</h3>
 <p>Privat gekaufte Möbel transportieren</p>
 <form id="klein">
 <input placeholder="Name">
@@ -71,7 +95,7 @@ function toggleForm(id){
 </div>
 
 <div class="card" onclick="toggleForm('umzug')">
-<h3>🏠 Kompletter Umzug</h3>
+<h3>🏠 Komplett Umzug</h3>
 <p>Neue Wohnung? Wir helfen komplett</p>
 <form id="umzug">
 <input placeholder="Name">
