@@ -6,10 +6,12 @@
 <title>Leukasumzug</title>
 
 <style>
-body{margin:0;font-family:Arial;background:#f8fafc;color:#111}
+body{margin:0;font-family:'Inter', 'Segoe UI', Arial, sans-serif;background:#f8fafc;color:#111}
 header{padding:80px 20px;background:linear-gradient(135deg,#0f172a,#1e293b);color:white;text-align:center}
 h1{font-size:48px;margin:0}
-.logo{font-size:34px;font-weight:bold}
+.logo{font-size:36px;font-weight:700;letter-spacing:1px}
+.logo .leukas{background:linear-gradient(90deg,#6366f1,#8b5cf6);-webkit-background-clip:text;color:transparent}
+.logo .umzug{background:linear-gradient(90deg,#06b6d4,#22d3ee);-webkit-background-clip:text;color:transparent}
 .logo .leukas{background:linear-gradient(90deg,#22c55e,#4ade80);-webkit-background-clip:text;color:transparent}
 .logo .umzug{background:linear-gradient(90deg,#38bdf8,#60a5fa);-webkit-background-clip:text;color:transparent}
 .big{
@@ -72,7 +74,7 @@ window.addEventListener('click', function(e){
 <body>
 
 <header>
-<div class="logo">🚚 <span class="leukas">Leukas</span><span class="umzug">Umzug</span></div>
+<div class="logo">🚛 <span class="leukas">Leukas</span><span class="umzug">Umzug</span></div>
 <h1>Günstig • Schnell • Am selben Tag möglich</h1>
 <div class="big">SEHR GÜNSTIG</div>
 <a class="btn" href="tel:+491704063762">📞 Anrufen</a>
@@ -86,13 +88,13 @@ window.addEventListener('click', function(e){
 <h2>Unsere Kategorien</h2>
 <div class="grid">
 
-<div class="card">
+<div class="card" onclick="toggleForm('ikea')">
 <h3>🛒 IKEA Heerlen</h3>
 <p>In de Cramer 142, 6412 PM Heerlen</p>
-<button onclick="toggleForm('ikea')">Form öffnen</button>
+
 <h3>🛒 IKEA Heerlen</h3>
 <p>In de Cramer 142, 6412 PM Heerlen</p>
-<form id="ikea">
+<form id="ikea" onclick="event.stopPropagation()">
 <input placeholder="Name">
 <input placeholder="Telefon">
 <input placeholder="Lieferadresse">
@@ -102,13 +104,13 @@ window.addEventListener('click', function(e){
 </form>
 </div>
 
-<div class="card">
+<div class="card" onclick="toggleForm('poco')">
 <h3>🏬 Poco Aachen</h3>
 <p>Gut-Dämme-Straße 26, 52070 Aachen</p>
-<button onclick="toggleForm('poco')">Form öffnen</button>
+
 <h3>🏬 Poco Aachen</h3>
 <p>Gut-Dämme-Straße 26, 52070 Aachen</p>
-<form id="poco">
+<form id="poco" onclick="event.stopPropagation()">
 <input placeholder="Name">
 <input placeholder="Telefon">
 <input placeholder="Lieferadresse">
@@ -118,13 +120,13 @@ window.addEventListener('click', function(e){
 </form>
 </div>
 
-<div class="card">
+<div class="card" onclick="toggleForm('klein')">
 <h3>📦 Kleinanzeigen</h3>
 <p>Privat gekaufte Möbel transportieren</p>
-<button onclick="toggleForm('klein')">Form öffnen</button>
+
 <h3>📦 Kleinanzeigen</h3>
 <p>Privat gekaufte Möbel transportieren</p>
-<form id="klein">
+<form id="klein" onclick="event.stopPropagation()">
 <input placeholder="Name">
 <input placeholder="Telefon">
 <input placeholder="Abholung Adresse">
@@ -135,13 +137,13 @@ window.addEventListener('click', function(e){
 </form>
 </div>
 
-<div class="card">
+<div class="card" onclick="toggleForm('umzug')">
 <h3>🏠 Komplett Umzug</h3>
 <p>Neue Wohnung? Wir helfen komplett</p>
-<button onclick="toggleForm('umzug')">Form öffnen</button>
+
 <h3>🏠 Komplett Umzug</h3>
 <p>Neue Wohnung? Wir helfen komplett</p>
-<form id="umzug">
+<form id="umzug" onclick="event.stopPropagation()">
 <input placeholder="Name">
 <input placeholder="Telefon">
 <input placeholder="Alte Adresse">
@@ -153,13 +155,13 @@ window.addEventListener('click', function(e){
 </form>
 </div>
 
-<div class="card">
+<div class="card" onclick="toggleForm('custom')">
 <h3>🧾 Andere Möbelhäuser</h3>
 <p>Möbel von unbekannten oder kleineren Shops</p>
-<button onclick="toggleForm('custom')">Form öffnen</button>
+
 <h3>🧾 Andere Möbelhäuser</h3>
 <p>Möbel von unbekannten oder kleineren Shops</p>
-<form id="custom">
+<form id="custom" onclick="event.stopPropagation()">
 <input placeholder="Name">
 <input placeholder="Telefon">
 <input placeholder="Abholung Adresse">
