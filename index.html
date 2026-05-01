@@ -8,35 +8,47 @@
 <style>
 body {
 margin:0;
-font-family: 'Segoe UI', sans-serif;
-background: linear-gradient(120deg,#1f1c2c,#928dab);
+font-family: 'Poppins', sans-serif;
+background:#0f172a;
 color:white;
 text-align:center;
 }
 
 header {
-padding:60px 20px;
-background:rgba(0,0,0,0.4);
+padding:80px 20px;
+background:linear-gradient(135deg,#0f172a,#1e293b);
 }
 
 .logo {
-font-size:40px;
-font-weight:bold;
-letter-spacing:2px;
+width:120px;
+margin:auto;
+animation: float 3s ease-in-out infinite;
 }
 
-.logo span {
-color:#00ffcc;
+@keyframes float {
+0% {transform:translateY(0);} 
+50% {transform:translateY(-10px);} 
+100% {transform:translateY(0);} 
 }
 
 h1 {
 font-size:50px;
-margin:10px 0;
+margin-top:10px;
 }
 
 .subtitle {
-font-size:20px;
-opacity:0.9;
+opacity:0.8;
+}
+
+.btn {
+display:inline-block;
+margin:10px;
+padding:15px 30px;
+background:#22c55e;
+color:black;
+font-weight:bold;
+border-radius:10px;
+text-decoration:none;
 }
 
 .section {
@@ -52,37 +64,39 @@ margin:auto;
 }
 
 .card {
-background:white;
-color:black;
+background:#1e293b;
 padding:25px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
+border-radius:15px;
 transition:0.3s;
 }
 
 .card:hover {
-transform:scale(1.05);
+transform:translateY(-10px);
+background:#334155;
 }
 
-.btn {
-display:inline-block;
-margin:15px;
-padding:15px 35px;
-background:#00ffcc;
-color:black;
-text-decoration:none;
-font-weight:bold;
-border-radius:10px;
-}
-
-.gallery img {
+img {
 width:100%;
 border-radius:15px;
 }
 
+.tip {
+background:#22c55e;
+color:black;
+padding:15px;
+border-radius:10px;
+margin:15px auto;
+max-width:600px;
+animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+from {opacity:0;} to {opacity:1;}
+}
+
 footer {
 padding:30px;
-background:rgba(0,0,0,0.4);
+background:#020617;
 }
 
 </style>
@@ -91,50 +105,50 @@ background:rgba(0,0,0,0.4);
 <body>
 
 <header>
-<div class="logo">🚚 <span>Leukas</span>Umzug</div>
-<h1>Günstig & Schnell Umziehen</h1>
-<p class="subtitle">Same Day • Studentenfreundlich • Zuverlässig</p>
+<img class="logo" src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
+<h1>Leukasumzug</h1>
+<p class="subtitle">Günstig • Schnell • Same Day möglich</p>
 
 <a class="btn" href="tel:+491704063762">📞 Anrufen</a>
 <a class="btn" href="https://wa.me/491704063762">💬 WhatsApp</a>
 </header>
 
 <div class="section">
-<h2>Unsere Services</h2>
+<h2>Unsere Arbeit</h2>
+<div class="grid">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+<img src="https://images.unsplash.com/photo-1598300056393-4aac492f4344">
+<img src="https://images.unsplash.com/photo-1616628182504-9d4d2c4a5c88">
+</div>
+</div>
+
+<div class="section">
+<h2>Umzug Tipps</h2>
+<div class="tip">📦 Tipp: Schwere Sachen immer unten packen!</div>
+<div class="tip">🛋️ Tipp: Möbel vorher auseinanderbauen spart Zeit & Geld</div>
+</div>
+
+<div class="section">
+<h2>Transport Fahrzeug</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Citroen_Jumpy_2017.jpg">
+<p>Moderner Transporter für sichere Umzüge</p>
+</div>
+
+<div class="section">
+<h2>Services</h2>
 <div class="grid">
 <div class="card">🏠 Kleine Umzüge</div>
 <div class="card">📦 Möbeltransport</div>
-<div class="card">🛒 IKEA / Poco Transporte</div>
-<div class="card">📲 Kleinanzeigen Transporte</div>
-</div>
-</div>
-
-<div class="section">
-<h2>Galerie</h2>
-<div class="grid gallery">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
-<img src="https://images.unsplash.com/photo-1598300056393-4aac492f4344">
-<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952">
-</div>
-</div>
-
-<div class="section">
-<h2>Warum wir?</h2>
-<div class="grid">
-<div class="card">✔ Sehr günstig</div>
-<div class="card">✔ Same Day möglich</div>
-<div class="card">✔ Perfekt für Studenten</div>
-<div class="card">✔ Schnell & flexibel</div>
+<div class="card">🛒 IKEA / Poco</div>
+<div class="card">📲 Kleinanzeigen</div>
 </div>
 </div>
 
 <div class="section">
 <h2>Kontakt</h2>
-<div class="grid">
 <div class="card">📞 +49 170 4063762</div>
 <div class="card">📧 Leukasumzug@gmail.com</div>
 <div class="card">📍 Pontstr 103-105 Aachen</div>
-</div>
 </div>
 
 <footer>
