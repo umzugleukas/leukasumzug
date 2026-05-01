@@ -30,9 +30,11 @@ margin-top:20px;
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;max-width:1100px;margin:auto}
 .card{
 position:relative;
+z-index:1;
+position:relative;
 z-index:1;background:white;border-radius:15px;padding:25px;box-shadow:0 10px 25px rgba(0,0,0,0.1);cursor:pointer;transition:0.3s}
 .card:hover{transform:translateY(-10px)}
-form{display:none;margin-top:20px}
+form{display:none;margin-top:20px;position:relative;z-index:10}
 input,textarea{width:90%;padding:12px;margin:8px;border-radius:8px;border:1px solid #ccc}
 button{padding:12px 25px;background:#22c55e;border:none;border-radius:10px;font-weight:bold;cursor:pointer}
 .marquee{overflow:hidden;white-space:nowrap;background:#111;color:white;padding:10px 0;margin-top:20px}
@@ -43,9 +45,17 @@ button{padding:12px 25px;background:#22c55e;border:none;border-radius:10px;font-
 
 <script>
 function toggleForm(id){
-  const forms = document.querySelectorAll('form');
-  forms.forEach(f => {
-    if(f.id !== id){ f.style.display = 'none'; }
+  const el = document.getElementById(id);
+  const isOpen = el.style.display === 'block';
+
+  // close all
+  document.querySelectorAll('form').forEach(f => f.style.display='none');
+
+  // open clicked
+  if(!isOpen){
+    el.style.display = 'block';
+  }
+}
   });
 
   const el = document.getElementById(id);
