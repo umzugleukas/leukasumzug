@@ -9,7 +9,9 @@
 body{margin:0;font-family:Arial;background:#f8fafc;color:#111}
 header{padding:80px 20px;background:linear-gradient(135deg,#0f172a,#1e293b);color:white;text-align:center}
 h1{font-size:48px;margin:0}
-.logo{font-size:32px;font-weight:bold}
+.logo{font-size:34px;font-weight:bold}
+.logo .leukas{color:#22c55e}
+.logo .umzug{color:#38bdf8}
 .big{
 font-size:70px;
 color:#22c55e;
@@ -29,6 +31,10 @@ margin-top:20px;
 form{display:none;margin-top:20px}
 input,textarea{width:90%;padding:12px;margin:8px;border-radius:8px;border:1px solid #ccc}
 button{padding:12px 25px;background:#22c55e;border:none;border-radius:10px;font-weight:bold;cursor:pointer}
+.marquee{overflow:hidden;white-space:nowrap;background:#111;color:white;padding:10px 0;margin-top:20px}
+.marquee span{display:inline-block;padding-left:100%;animation:scroll 12s linear infinite}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+
 </style>
 
 <script>
@@ -43,11 +49,14 @@ function toggleForm(id){
 <body>
 
 <header>
-<div class="logo">🚚 Leukasumzug</div>
+<div class="logo">🚚 <span class="leukas">Leukas</span><span class="umzug">Umzug</span></div>
 <h1>Günstig • Schnell • Am selben Tag möglich</h1>
 <div class="big">SEHR GÜNSTIG</div>
 <a class="btn" href="tel:+491704063762">📞 Anrufen</a>
 <a class="btn" href="https://wa.me/491704063762">💬 WhatsApp</a>
+<div class="marquee">
+<span>⚡ Schnell • Günstig • Zuverlässig • Aachen & Umgebung • Jetzt Termin sichern ⚡</span>
+</div>
 </header>
 
 <div class="section">
