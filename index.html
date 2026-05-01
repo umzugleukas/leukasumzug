@@ -12,19 +12,22 @@ font-family: Arial, sans-serif;
 background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 color:white;
 text-align:center;
+overflow-x:hidden;
 }
 
 header {
-padding:60px 20px;
+padding:80px 20px;
+animation: fadeIn 1.5s ease-in-out;
 }
 
 h1 {
-font-size:50px;
+font-size:55px;
 margin:0;
+letter-spacing:2px;
 }
 
 .big {
-font-size:60px;
+font-size:65px;
 color:#00ffcc;
 animation: pulse 1.5s infinite;
 margin-top:20px;
@@ -36,44 +39,81 @@ margin-top:20px;
 100% {transform:scale(1);}
 }
 
+@keyframes fadeIn {
+from {opacity:0; transform:translateY(-30px);} 
+to {opacity:1; transform:translateY(0);} 
+}
+
 .section {
-padding:50px 20px;
+padding:60px 20px;
+animation: fadeIn 1.5s ease-in-out;
 }
 
 .card {
 background:white;
 color:black;
 margin:20px auto;
-padding:20px;
-border-radius:15px;
-max-width:400px;
-transition:0.3s;
+padding:25px;
+border-radius:20px;
+max-width:420px;
+transition:0.4s;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+0% {transform:translateY(0px);} 
+50% {transform:translateY(-10px);} 
+100% {transform:translateY(0px);} 
 }
 
 .card:hover {
-transform:translateY(-10px) scale(1.05);
+transform:translateY(-15px) scale(1.08);
 }
 
 .btn {
 display:inline-block;
-margin-top:20px;
-padding:15px 30px;
+margin:15px;
+padding:15px 35px;
 background:#00ffcc;
 color:black;
 text-decoration:none;
 font-weight:bold;
-border-radius:10px;
+border-radius:12px;
+transition:0.3s;
+animation: glow 2s infinite;
+}
+
+.btn:hover {
+transform:scale(1.1);
+}
+
+@keyframes glow {
+0% {box-shadow:0 0 5px #00ffcc;} 
+50% {box-shadow:0 0 20px #00ffcc;} 
+100% {box-shadow:0 0 5px #00ffcc;} 
 }
 
 .truck {
-font-size:80px;
-animation: move 3s linear infinite;
+font-size:90px;
+animation: move 4s linear infinite;
 }
 
 @keyframes move {
-0% {transform:translateX(-50px);}
-50% {transform:translateX(50px);}
-100% {transform:translateX(-50px);}
+0% {transform:translateX(-120px);} 
+50% {transform:translateX(120px);} 
+100% {transform:translateX(-120px);} 
+}
+
+.badge {
+display:inline-block;
+background:#00ffcc;
+color:black;
+padding:8px 15px;
+border-radius:20px;
+margin:5px;
+font-weight:bold;
+animation: fadeIn 2s;
 }
 
 footer {
@@ -91,6 +131,13 @@ margin-top:40px;
 <h1>Leukasumzug</h1>
 <div class="big">SEHR GÜNSTIG</div>
 <p>Schnell • Sicher • Zuverlässig</p>
+
+<div>
+<span class="badge">Same Day</span>
+<span class="badge">Studentenfreundlich</span>
+<span class="badge">Top Service</span>
+</div>
+
 </header>
 
 <div class="truck">🚚</div>
@@ -100,47 +147,47 @@ margin-top:40px;
 
 <div class="card">
 🏠 Kleine Umzüge<br>
-Schnell und günstig
+Schnell und extrem günstig
 </div>
 
 <div class="card">
 📦 Möbeltransport<br>
-Sicher & zuverlässig
+Sicher & professionell
 </div>
 
 <div class="card">
 🛒 IKEA / Poco / Kleinanzeigen Transporte<br>
-Direkt zu dir geliefert
+Heute gekauft → heute geliefert
 </div>
 
 <a class="btn" href="tel:+491704063762">📞 Jetzt anrufen</a>
-<br>
-<a class="btn" href="https://wa.me/491704063762">💬 WhatsApp schreiben</a>
+<a class="btn" href="https://wa.me/491704063762">💬 WhatsApp</a>
 </div>
 
 <div class="section">
 <h2>Warum wir?</h2>
 
-<div class="card">✔ Sehr günstige Preise (ideal für Studenten)</div>
+<div class="card">✔ Sehr günstige Preise (perfekt für Studenten)</div>
 <div class="card">✔ Same Day Umzug möglich</div>
-<div class="card">✔ Flexible Termine</div>
-<div class="card">✔ Perfekt für kleine Umzüge & Einzeltransporte</div>
+<div class="card">✔ Flexible Termine (auch kurzfristig)</div>
+<div class="card">✔ Spezialist für kleine Transporte</div>
+</div>
+
+<div class="section">
+<h2>Kunden sagen</h2>
+
+<div class="card">⭐️⭐️⭐️⭐️⭐️<br>"Sehr schnell und günstig!"</div>
+<div class="card">⭐️⭐️⭐️⭐️⭐️<br>"Perfekt für IKEA Transport"</div>
+<div class="card">⭐️⭐️⭐️⭐️⭐️<br>"Top Service, jederzeit wieder"</div>
+
 </div>
 
 <div class="section">
 <h2>Kontakt</h2>
 
-<div class="card">
-📞 +49 170 4063762
-</div>
-
-<div class="card">
-📧 Leukasumzug@gmail.com
-</div>
-
-<div class="card">
-📍 Pontstr 103-105<br>Aachen 52062
-</div>
+<div class="card">📞 +49 170 4063762</div>
+<div class="card">📧 Leukasumzug@gmail.com</div>
+<div class="card">📍 Pontstr 103-105<br>Aachen 52062</div>
 
 </div>
 
