@@ -21,18 +21,19 @@ padding:60px 20px;
 }
 
 .logo{
-font-size:40px;
+font-size:42px;
 font-weight:800;
+text-shadow:0 0 10px rgba(255,255,255,0.2);
 }
 
 .logo .l{
-background:linear-gradient(90deg,#7c3aed,#6366f1);
+background:linear-gradient(90deg,#ff7a18,#ff3d3d);
 -webkit-background-clip:text;
 color:transparent;
 }
 
 .logo .u{
-background:linear-gradient(90deg,#06b6d4,#3b82f6);
+background:linear-gradient(90deg,#00f2fe,#4facfe);
 -webkit-background-clip:text;
 color:transparent;
 }
@@ -41,7 +42,6 @@ color:transparent;
 font-size:65px;
 color:#22c55e;
 animation:pulse 1.5s infinite;
-margin-top:20px;
 }
 
 @keyframes pulse{
@@ -92,7 +92,6 @@ padding:12px;
 margin:8px;
 border-radius:8px;
 border:1px solid #ccc;
-font-size:14px;
 }
 
 button{
@@ -142,14 +141,13 @@ el.style.display = el.style.display === "block" ? "none" : "block";
 <p>In de Cramer 142, 6412 PM Heerlen</p>
 </div>
 
-<form id="ikea" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST" enctype="multipart/form-data">
-<input name="Kategorie" value="IKEA Heerlen" type="hidden">
+<form id="ikea" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST">
+<input type="hidden" name="Kategorie" value="IKEA Heerlen">
 <input name="Name" placeholder="Name" required>
 <input name="Telefon" placeholder="Telefon" required>
 <input name="Lieferadresse" placeholder="Lieferadresse">
 <input name="Stockwerk" placeholder="Stockwerk">
-<label>Foto der Möbel hochladen</label><br>
-<input type="file" name="file">
+<input name="Foto Link" placeholder="Foto Link (WhatsApp / Drive)">
 <input type="hidden" name="_next" value="https://leukasumzug.com">
 <button type="submit">Senden</button>
 </form>
@@ -162,13 +160,13 @@ el.style.display = el.style.display === "block" ? "none" : "block";
 <p>Gut-Dämme-Straße 26, 52070 Aachen</p>
 </div>
 
-<form id="poco" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST" enctype="multipart/form-data">
-<input name="Kategorie" value="Poco Aachen" type="hidden">
+<form id="poco" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST">
+<input type="hidden" name="Kategorie" value="Poco Aachen">
 <input name="Name" placeholder="Name" required>
 <input name="Telefon" placeholder="Telefon" required>
 <input name="Lieferadresse" placeholder="Lieferadresse">
 <input name="Stockwerk" placeholder="Stockwerk">
-<input type="file" name="file">
+<input name="Foto Link" placeholder="Foto Link">
 <input type="hidden" name="_next" value="https://leukasumzug.com">
 <button type="submit">Senden</button>
 </form>
@@ -181,14 +179,14 @@ el.style.display = el.style.display === "block" ? "none" : "block";
 <p>Privat gekaufte Möbel transportieren</p>
 </div>
 
-<form id="klein" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST" enctype="multipart/form-data">
-<input name="Kategorie" value="Kleinanzeigen" type="hidden">
+<form id="klein" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST">
+<input type="hidden" name="Kategorie" value="Kleinanzeigen">
 <input name="Name" placeholder="Name" required>
 <input name="Telefon" placeholder="Telefon" required>
 <input name="Abholung" placeholder="Abholung Adresse">
 <input name="Lieferung" placeholder="Liefer Adresse">
 <input name="Stockwerk" placeholder="Stockwerk">
-<input type="file" name="file">
+<input name="Foto Link" placeholder="Foto Link">
 <input type="hidden" name="_next" value="https://leukasumzug.com">
 <button type="submit">Senden</button>
 </form>
@@ -201,15 +199,15 @@ el.style.display = el.style.display === "block" ? "none" : "block";
 <p>Neue Wohnung? Wir helfen komplett</p>
 </div>
 
-<form id="umzug" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST" enctype="multipart/form-data">
-<input name="Kategorie" value="Komplett Umzug" type="hidden">
+<form id="umzug" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST">
+<input type="hidden" name="Kategorie" value="Komplett Umzug">
 <input name="Name" placeholder="Name" required>
 <input name="Telefon" placeholder="Telefon" required>
 <input name="Alte Adresse" placeholder="Alte Adresse">
 <input name="Neue Adresse" placeholder="Neue Adresse">
 <input name="Stockwerk" placeholder="Stockwerk">
 <textarea name="Details" placeholder="Details"></textarea>
-<input type="file" name="file">
+<input name="Foto Link" placeholder="Foto Link">
 <input type="hidden" name="_next" value="https://leukasumzug.com">
 <button type="submit">Senden</button>
 </form>
@@ -222,14 +220,14 @@ el.style.display = el.style.display === "block" ? "none" : "block";
 <p>Möbel von kleinen oder unbekannten Shops</p>
 </div>
 
-<form id="custom" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST" enctype="multipart/form-data">
-<input name="Kategorie" value="Andere Möbelhäuser" type="hidden">
+<form id="custom" class="form-box" action="https://formspree.io/f/mnjwnbbz" method="POST">
+<input type="hidden" name="Kategorie" value="Andere Möbelhäuser">
 <input name="Name" placeholder="Name" required>
 <input name="Telefon" placeholder="Telefon" required>
 <input name="Abholung" placeholder="Abholung">
 <input name="Lieferung" placeholder="Lieferung">
 <input name="Stockwerk" placeholder="Stockwerk">
-<input type="file" name="file">
+<input name="Foto Link" placeholder="Foto Link">
 <input type="hidden" name="_next" value="https://leukasumzug.com">
 <button type="submit">Senden</button>
 </form>
