@@ -3,43 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leukas Umzug</title>
+<title>Leukasumzug</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+body{margin:0;font-family:Arial;background:#f4f7fb;text-align:center;}
 
-body{background:#f4f7fb;}
-
-/* TOP BAR */
-.topbar{
-background:#22c55e;
-color:white;
-padding:8px;
-font-size:14px;
-display:flex;
-justify-content:center;
-gap:20px;
-}
-
-/* HEADER */
 header{
 background:linear-gradient(135deg,#020617,#0f172a);
-color:white;
-padding:60px 20px;
-text-align:center;
+color:white;padding:60px 20px;
 }
 
-.logo{
-font-size:42px;
-font-weight:900;
-}
-
-.logo span:first-child{
-color:#ff512f;
-}
-.logo span:last-child{
-color:#22c55e;
-}
+.logo{font-size:42px;font-weight:bold;}
+.logo .l{color:#ff512f;}
+.logo .u{color:#22c55e;}
 
 .big{
 font-size:60px;
@@ -53,29 +29,21 @@ animation:pulse 1.5s infinite;
 100%{transform:scale(1)}
 }
 
-/* BUTTONS */
-.cta{
-margin-top:20px;
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-}
-
 .cta a{
-padding:12px 18px;
+margin:5px;
+padding:12px 20px;
 border-radius:10px;
 color:white;
 text-decoration:none;
 font-weight:bold;
+display:inline-block;
 }
 
 .call{background:#ef4444;}
 .wa{background:#25D366;}
 .mail{background:#3b82f6;}
 
-/* GRID */
-.section{padding:40px 20px;text-align:center;}
+.section{padding:40px 20px;}
 
 .grid{
 display:grid;
@@ -96,39 +64,35 @@ transition:0.3s;
 
 .card:hover{transform:translateY(-6px);}
 
-.click{
+.click-hint{
 color:#22c55e;
-font-size:12px;
+font-size:13px;
 margin-top:10px;
 }
 
-/* FORM */
 .form{
 display:none;
 background:white;
-margin:10px auto;
 padding:20px;
-max-width:400px;
+margin-top:10px;
 border-radius:12px;
 box-shadow:0 10px 20px rgba(0,0,0,0.15);
 }
 
 input,textarea{
-width:100%;
+width:90%;
 padding:10px;
-margin:6px 0;
+margin:5px;
 border-radius:8px;
 border:1px solid #ccc;
 }
 
 button{
 background:#25D366;
+color:white;
 border:none;
 padding:12px;
-width:100%;
 border-radius:10px;
-color:white;
-font-weight:bold;
 cursor:pointer;
 }
 
@@ -144,11 +108,14 @@ margin:auto;
 .review{
 background:white;
 padding:20px;
-border-radius:10px;
+border-radius:12px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:left;
 }
 
-/* FLOAT WA */
+.review b{display:block;margin-top:10px;}
+
+/* FLOAT WHATSAPP */
 .float{
 position:fixed;
 bottom:20px;
@@ -159,30 +126,34 @@ padding:15px;
 border-radius:50%;
 font-size:24px;
 text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
 /* FOOTER */
 footer{
 background:#020617;
 color:white;
-padding:20px;
-text-align:center;
+padding:30px;
 margin-top:40px;
+font-size:14px;
+line-height:1.6;
 }
 </style>
 
 <script>
 function toggle(id){
 let x=document.getElementById(id);
-x.style.display = x.style.display==="block" ? "none":"block";
+x.style.display = x.style.display==="block"?"none":"block";
 }
 
 function send(id,cat){
 let inputs=document.querySelectorAll("#"+id+" input, #"+id+" textarea");
-let msg="🚛 Leukas Umzug%0A📦 "+cat+"%0A";
+let msg="🚛 Leukas Umzug Anfrage%0A📦 "+cat+"%0A";
 
 inputs.forEach(i=>{
-if(i.value) msg+=i.placeholder+": "+i.value+"%0A";
+if(i.value){
+msg+=i.placeholder+": "+i.value+"%0A";
+}
 });
 
 window.open("https://wa.me/491704063762?text="+msg);
@@ -193,19 +164,15 @@ window.open("https://wa.me/491704063762?text="+msg);
 
 <body>
 
-<div class="topbar">
-📞 +49 170 4063762 | 💬 WhatsApp sofort erreichbar
-</div>
-
 <header>
-<div class="logo">🚛 <span>Leukas</span> <span>Umzug</span></div>
-<h2>Schnell • Günstig • Aachen</h2>
+<div class="logo">🚛 <span class="l">Leukas</span><span class="u">Umzug</span></div>
+<h2>Schnell • Günstig • Am selben Tag möglich</h2>
 <div class="big">SEHR GÜNSTIG</div>
 
 <div class="cta">
-<a class="call" href="tel:+491704063762">Anrufen</a>
-<a class="wa" href="https://wa.me/491704063762">WhatsApp</a>
-<a class="mail" href="mailto:Leukasumzug@gmail.com">Email</a>
+<a class="call" href="tel:+491704063762">📞 Anrufen</a>
+<a class="wa" href="https://wa.me/491704063762">💬 WhatsApp</a>
+<a class="mail" href="mailto:Leukasumzug@gmail.com">✉️ Email</a>
 </div>
 </header>
 
@@ -214,84 +181,128 @@ window.open("https://wa.me/491704063762?text="+msg);
 
 <div class="grid">
 
+<!-- IKEA -->
 <div>
 <div class="card" onclick="toggle('f1')">
 🛒 IKEA Heerlen
-<div class="click">Zum Öffnen klicken</div>
+<div class="click-hint">👇 Zum Öffnen klicken</div>
 </div>
 <div id="f1" class="form">
 <input placeholder="Name">
 <input placeholder="Telefon">
-<input placeholder="Adresse">
+<input placeholder="Lieferadresse">
 <input placeholder="Stockwerk">
-<input placeholder="Personenanzahl">
-<input placeholder="Eigenes Auto?">
-<button onclick="send('f1','IKEA')">WhatsApp senden</button>
+<input placeholder="Wie viele Personen fahren mit?">
+<input placeholder="Eigenes Auto? (Ja/Nein)">
+<textarea placeholder="Details"></textarea>
+<button onclick="send('f1','IKEA Heerlen')">📲 WhatsApp senden</button>
 </div>
 </div>
 
+<!-- POCO -->
 <div>
 <div class="card" onclick="toggle('f2')">
 🏬 Poco Aachen
-<div class="click">Zum Öffnen klicken</div>
+<div class="click-hint">👇 Zum Öffnen klicken</div>
 </div>
 <div id="f2" class="form">
 <input placeholder="Name">
 <input placeholder="Telefon">
-<input placeholder="Adresse">
+<input placeholder="Lieferadresse">
 <input placeholder="Stockwerk">
-<input placeholder="Personenanzahl">
-<input placeholder="Eigenes Auto?">
-<button onclick="send('f2','Poco')">WhatsApp senden</button>
+<input placeholder="Wie viele Personen fahren mit?">
+<input placeholder="Eigenes Auto? (Ja/Nein)">
+<textarea placeholder="Details"></textarea>
+<button onclick="send('f2','Poco Aachen')">📲 WhatsApp senden</button>
 </div>
 </div>
 
+<!-- KLEINANZEIGEN -->
 <div>
 <div class="card" onclick="toggle('f3')">
 📦 Kleinanzeigen
-<div class="click">Zum Öffnen klicken</div>
+<div class="click-hint">👇 Zum Öffnen klicken</div>
 </div>
 <div id="f3" class="form">
-<input placeholder="Abholung">
-<input placeholder="Lieferung">
+<input placeholder="Abholung Adresse">
+<input placeholder="Liefer Adresse">
 <input placeholder="Stockwerk">
-<input placeholder="Personenanzahl">
-<input placeholder="Eigenes Auto?">
-<button onclick="send('f3','Kleinanzeigen')">WhatsApp senden</button>
+<input placeholder="Wie viele Personen fahren mit?">
+<input placeholder="Eigenes Auto? (Ja/Nein)">
+<button onclick="send('f3','Kleinanzeigen')">📲 WhatsApp senden</button>
 </div>
 </div>
 
+<!-- UMZUG -->
 <div>
 <div class="card" onclick="toggle('f4')">
-🏠 Umzug Komplett
-<div class="click">Zum Öffnen klicken</div>
+🏠 Komplett Umzug
+<div class="click-hint">👇 Zum Öffnen klicken</div>
 </div>
 <div id="f4" class="form">
 <input placeholder="Alte Adresse">
 <input placeholder="Neue Adresse">
 <input placeholder="Stockwerk">
-<input placeholder="Personenanzahl">
-<input placeholder="Eigenes Auto?">
-<button onclick="send('f4','Umzug')">WhatsApp senden</button>
+<input placeholder="Wie viele Personen fahren mit?">
+<input placeholder="Eigenes Auto? (Ja/Nein)">
+<textarea placeholder="Details"></textarea>
+<button onclick="send('f4','Komplett Umzug')">📲 WhatsApp senden</button>
 </div>
 </div>
 
 </div>
 </div>
 
+<!-- YORUMLAR -->
 <div class="section">
-<h2>⭐ Bewertungen</h2>
+<h2>⭐ Kundenbewertungen</h2>
+
 <div class="reviews">
-<div class="review">★★★★★ Sehr günstig und schnell! - Yusuf</div>
-<div class="review">★★★★★ Alles perfekt gelaufen - Anna</div>
-<div class="review">★★★★★ Top Service Aachen - Daniel</div>
+
+<div class="review">
+<span style="color:gold;">★★★★★</span>
+Sehr schnell und günstig! Beste Entscheidung in Aachen.
+<b>- Yusuf K.</b>
+</div>
+
+<div class="review">
+<span style="color:gold;">★★★★★</span>
+Top Service, freundlich und pünktlich.
+<b>- Anna L.</b>
+</div>
+
+<div class="review">
+<span style="color:gold;">★★★★★</span>
+Kleinanzeigen Möbel perfekt transportiert.
+<b>- Daniel S.</b>
+</div>
+
+<div class="review">
+<span style="color:gold;">★★★★★</span>
+Sehr flexibel und zuverlässig!
+<b>- Laura M.</b>
+</div>
+
 </div>
 </div>
 
 <a class="float" href="https://wa.me/491704063762">💬</a>
 
 <footer>
-Leukas Umzug • Aachen • leukasumzug@gmail.com
+<b>Impressum</b><br>
+Leukasumzug<br>
+Pontstr 103-105<br>
+52062 Aachen<br>
+Email: Leukasumzug@gmail.com<br>
+Tel: +49 170 4063762<br><br>
+
+<b>AGB</b><br>
+Alle Transporte erfolgen nach Vereinbarung. Preise variieren je nach Aufwand.<br><br>
+
+<b>Datenschutz</b><br>
+Ihre Daten werden nur zur Bearbeitung genutzt.<br><br>
+
+© 2026 Leukasumzug
 </footer>
 
 </body>
