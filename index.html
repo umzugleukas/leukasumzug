@@ -7,135 +7,37 @@
 
 <style>
 body{margin:0;font-family:'Inter',sans-serif;background:#f4f7fb;text-align:center;}
-
-header{
-background:linear-gradient(135deg,#020617,#0f172a);
-color:white;
-padding:60px 20px;
-}
+header{background:linear-gradient(135deg,#020617,#0f172a);color:white;padding:60px 20px;}
 
 .logo{font-size:44px;font-weight:800;}
+.logo .l{background:linear-gradient(90deg,#ff512f,#dd2476);-webkit-background-clip:text;color:transparent;}
+.logo .u{background:linear-gradient(90deg,#22c55e,#4ade80);-webkit-background-clip:text;color:transparent;}
 
-.logo .l{
-background:linear-gradient(90deg,#ff512f,#dd2476);
--webkit-background-clip:text;color:transparent;
-}
+.big{font-size:65px;color:#22c55e;animation:pulse 1.5s infinite;}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
 
-.logo .u{
-background:linear-gradient(90deg,#22c55e,#4ade80);
--webkit-background-clip:text;color:transparent;
-}
-
-.big{
-font-size:65px;color:#22c55e;
-animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.1)}
-100%{transform:scale(1)}
-}
-
-.cta-buttons{
-margin-top:20px;
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.cta-buttons a{
-padding:12px 20px;
-border-radius:10px;
-text-decoration:none;
-font-weight:bold;
-color:white;
-}
-
+.cta-buttons{margin-top:20px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap;}
+.cta-buttons a{padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:bold;color:white;}
 .call-btn{background:#ef4444;}
 .wa-btn{background:#25D366;}
 .mail-btn{background:#3b82f6;}
 
 .section{padding:50px 20px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;max-width:1100px;margin:auto;}
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-max-width:1100px;
-margin:auto;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-cursor:pointer;
-transition:0.3s;
-}
-
+.card{background:white;padding:25px;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.1);cursor:pointer;transition:0.3s;}
 .card:hover{transform:translateY(-8px);}
 
-.click-hint{
-margin-top:10px;
-font-size:13px;
-color:#22c55e;
-font-weight:bold;
-}
+.click-hint{margin-top:10px;font-size:13px;color:#22c55e;font-weight:bold;}
 
-.form-box{
-display:none;
-background:white;
-padding:20px;
-margin:10px auto 30px;
-max-width:400px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
+.form-box{display:none;background:white;padding:20px;margin:10px auto 30px;max-width:400px;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.15);}
+input,textarea{width:90%;padding:12px;margin:8px;border-radius:8px;border:1px solid #ccc;}
+button{padding:12px 25px;background:#25D366;border:none;border-radius:10px;font-weight:bold;color:white;cursor:pointer;}
 
-input,textarea{
-width:90%;
-padding:12px;
-margin:8px;
-border-radius:8px;
-border:1px solid #ccc;
-}
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:900px;margin:auto;}
+.review{background:white;padding:20px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
 
-button{
-padding:12px 25px;
-background:#25D366;
-border:none;
-border-radius:10px;
-font-weight:bold;
-cursor:pointer;
-color:white;
-}
-
-/* REVIEWS */
-.reviews{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:900px;
-margin:auto;
-}
-
-.review{
-background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-font-size:14px;
-}
-
-footer{
-background:#020617;
-color:white;
-padding:30px;
-margin-top:40px;
-}
+footer{background:#020617;color:white;padding:30px;margin-top:40px;}
 </style>
 
 <script>
@@ -158,11 +60,9 @@ message+="➡️ "+i.placeholder+": "+i.value+"%0A";
 });
 
 message+="%0A📸 (Optional: Fotos können hier gesendet werden)";
-
 window.open("https://wa.me/491704063762?text="+message,"_blank");
 }
 </script>
-
 </head>
 
 <body>
@@ -184,7 +84,7 @@ window.open("https://wa.me/491704063762?text="+message,"_blank");
 
 <div class="grid">
 
-<!-- FORM TEMPLATE -->
+<!-- IKEA -->
 <div>
 <div class="card" onclick="toggleForm('ikea')">
 <h3>🛒 IKEA Heerlen</h3>
@@ -197,13 +97,85 @@ window.open("https://wa.me/491704063762?text="+message,"_blank");
 <input placeholder="Lieferadresse">
 <input placeholder="Stockwerk">
 <input placeholder="Wie viele Personen fahren mit?">
-<input placeholder="Kommen Sie mit eigenem Auto? (Ja/Nein)">
+<input placeholder="Eigenes Auto? (Ja/Nein)">
 <textarea placeholder="Details"></textarea>
 <button onclick="sendWhatsApp('ikea','IKEA Heerlen')">📲 WhatsApp senden</button>
 </div>
 </div>
 
-<!-- diğer formlarda da aynı yeni alanlar var -->
+<!-- POCO -->
+<div>
+<div class="card" onclick="toggleForm('poco')">
+<h3>🏬 Poco Aachen</h3>
+<p>Gut-Dämme-Straße 26, 52070 Aachen</p>
+<div class="click-hint">👇 Zum Öffnen klicken</div>
+</div>
+<div id="poco" class="form-box">
+<input placeholder="Name">
+<input placeholder="Telefon">
+<input placeholder="Lieferadresse">
+<input placeholder="Stockwerk">
+<input placeholder="Wie viele Personen fahren mit?">
+<input placeholder="Eigenes Auto? (Ja/Nein)">
+<textarea placeholder="Details"></textarea>
+<button onclick="sendWhatsApp('poco','Poco Aachen')">📲 WhatsApp senden</button>
+</div>
+</div>
+
+<!-- KLEIN -->
+<div>
+<div class="card" onclick="toggleForm('klein')">
+<h3>📦 Kleinanzeigen</h3>
+<div class="click-hint">👇 Zum Öffnen klicken</div>
+</div>
+<div id="klein" class="form-box">
+<input placeholder="Name">
+<input placeholder="Telefon">
+<input placeholder="Abholung Adresse">
+<input placeholder="Liefer Adresse">
+<input placeholder="Stockwerk">
+<input placeholder="Wie viele Personen fahren mit?">
+<input placeholder="Eigenes Auto? (Ja/Nein)">
+<button onclick="sendWhatsApp('klein','Kleinanzeigen')">📲 WhatsApp senden</button>
+</div>
+</div>
+
+<!-- UMZUG -->
+<div>
+<div class="card" onclick="toggleForm('umzug')">
+<h3>🏠 Komplett Umzug</h3>
+<div class="click-hint">👇 Zum Öffnen klicken</div>
+</div>
+<div id="umzug" class="form-box">
+<input placeholder="Name">
+<input placeholder="Telefon">
+<input placeholder="Alte Adresse">
+<input placeholder="Neue Adresse">
+<input placeholder="Stockwerk">
+<input placeholder="Wie viele Personen fahren mit?">
+<input placeholder="Eigenes Auto? (Ja/Nein)">
+<textarea placeholder="Details"></textarea>
+<button onclick="sendWhatsApp('umzug','Komplett Umzug')">📲 WhatsApp senden</button>
+</div>
+</div>
+
+<!-- CUSTOM -->
+<div>
+<div class="card" onclick="toggleForm('custom')">
+<h3>🧾 Andere Möbelhäuser</h3>
+<div class="click-hint">👇 Zum Öffnen klicken</div>
+</div>
+<div id="custom" class="form-box">
+<input placeholder="Name">
+<input placeholder="Telefon">
+<input placeholder="Abholung">
+<input placeholder="Lieferung">
+<input placeholder="Stockwerk">
+<input placeholder="Wie viele Personen fahren mit?">
+<input placeholder="Eigenes Auto? (Ja/Nein)">
+<button onclick="sendWhatsApp('custom','Andere Möbelhäuser')">📲 WhatsApp senden</button>
+</div>
+</div>
 
 </div>
 </div>
@@ -217,7 +189,7 @@ window.open("https://wa.me/491704063762?text="+message,"_blank");
 <div class="review">
 <span style="color:gold;">★★★★★</span><br>
 "Sehr schnell und günstig! Lieferung in Aachen perfekt."
-<br><b>- Ali K.</b>
+<br><b>- Yusuf K.</b>
 </div>
 
 <div class="review">
@@ -228,13 +200,13 @@ window.open("https://wa.me/491704063762?text="+message,"_blank");
 
 <div class="review">
 <span style="color:gold;">★★★★★</span><br>
-"Alles sicher transportiert."
+"Kleinanzeigen Möbel sicher transportiert."
 <br><b>- Daniel S.</b>
 </div>
 
 <div class="review">
 <span style="color:gold;">★★★★★</span><br>
-"Sehr zuverlässig!"
+"Sehr zuverlässig und flexibel."
 <br><b>- Laura M.</b>
 </div>
 
