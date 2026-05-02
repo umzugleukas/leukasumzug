@@ -8,6 +8,14 @@
 <style>
 body{margin:0;font-family:Arial;background:#f4f7fb;text-align:center;}
 
+/* TOP WHATSAPP BAR */
+.topbar{
+background:#25D366;
+color:white;
+padding:10px;
+font-weight:bold;
+}
+
 header{
 background:linear-gradient(135deg,#020617,#0f172a);
 color:white;padding:60px 20px;
@@ -164,6 +172,10 @@ window.open("https://wa.me/491704063762?text="+msg);
 
 <body>
 
+<div class="topbar">
+💬 Sofort über WhatsApp erreichbar: +49 170 4063762
+</div>
+
 <header>
 <div class="logo">🚛 <span class="l">Leukas</span><span class="u">Umzug</span></div>
 <h2>Schnell • Günstig • Am selben Tag möglich</h2>
@@ -191,7 +203,9 @@ window.open("https://wa.me/491704063762?text="+msg);
 <input placeholder="Name">
 <input placeholder="Telefon">
 <input placeholder="Lieferadresse">
-<input placeholder="Stockwerk">
+<input placeholder="Abholung Stockwerk">
+<input placeholder="Lieferung Stockwerk">
+<input placeholder="Aufzug vorhanden? (Ja/Nein)">
 <input placeholder="Wie viele Personen fahren mit?">
 <input placeholder="Eigenes Auto? (Ja/Nein)">
 <textarea placeholder="Details"></textarea>
@@ -209,7 +223,9 @@ window.open("https://wa.me/491704063762?text="+msg);
 <input placeholder="Name">
 <input placeholder="Telefon">
 <input placeholder="Lieferadresse">
-<input placeholder="Stockwerk">
+<input placeholder="Abholung Stockwerk">
+<input placeholder="Lieferung Stockwerk">
+<input placeholder="Aufzug vorhanden? (Ja/Nein)">
 <input placeholder="Wie viele Personen fahren mit?">
 <input placeholder="Eigenes Auto? (Ja/Nein)">
 <textarea placeholder="Details"></textarea>
@@ -226,7 +242,9 @@ window.open("https://wa.me/491704063762?text="+msg);
 <div id="f3" class="form">
 <input placeholder="Abholung Adresse">
 <input placeholder="Liefer Adresse">
-<input placeholder="Stockwerk">
+<input placeholder="Abholung Stockwerk">
+<input placeholder="Lieferung Stockwerk">
+<input placeholder="Aufzug vorhanden? (Ja/Nein)">
 <input placeholder="Wie viele Personen fahren mit?">
 <input placeholder="Eigenes Auto? (Ja/Nein)">
 <button onclick="send('f3','Kleinanzeigen')">📲 WhatsApp senden</button>
@@ -242,7 +260,9 @@ window.open("https://wa.me/491704063762?text="+msg);
 <div id="f4" class="form">
 <input placeholder="Alte Adresse">
 <input placeholder="Neue Adresse">
-<input placeholder="Stockwerk">
+<input placeholder="Abholung Stockwerk">
+<input placeholder="Lieferung Stockwerk">
+<input placeholder="Aufzug vorhanden? (Ja/Nein)">
 <input placeholder="Wie viele Personen fahren mit?">
 <input placeholder="Eigenes Auto? (Ja/Nein)">
 <textarea placeholder="Details"></textarea>
@@ -250,7 +270,7 @@ window.open("https://wa.me/491704063762?text="+msg);
 </div>
 </div>
 
-<!-- ANDERE MÖBELHÄUSER -->
+<!-- ANDERE -->
 <div>
 <div class="card" onclick="toggle('f5')">
 🪑 Andere Möbelhäuser
@@ -261,7 +281,9 @@ window.open("https://wa.me/491704063762?text="+msg);
 <input placeholder="Telefon">
 <input placeholder="Abholadresse (Möbelhaus)">
 <input placeholder="Lieferadresse">
-<input placeholder="Stockwerk">
+<input placeholder="Abholung Stockwerk">
+<input placeholder="Lieferung Stockwerk">
+<input placeholder="Aufzug vorhanden? (Ja/Nein)">
 <input placeholder="Wie viele Personen fahren mit?">
 <input placeholder="Eigenes Auto? (Ja/Nein)">
 <textarea placeholder="Details"></textarea>
@@ -277,31 +299,10 @@ window.open("https://wa.me/491704063762?text="+msg);
 <h2>⭐ Kundenbewertungen</h2>
 
 <div class="reviews">
-
-<div class="review">
-<span style="color:gold;">★★★★★</span>
-Sehr schnell und günstig! Beste Entscheidung in Aachen.
-<b>- Yusuf K.</b>
-</div>
-
-<div class="review">
-<span style="color:gold;">★★★★★</span>
-Top Service, freundlich und pünktlich.
-<b>- Anna L.</b>
-</div>
-
-<div class="review">
-<span style="color:gold;">★★★★★</span>
-Kleinanzeigen Möbel perfekt transportiert.
-<b>- Daniel S.</b>
-</div>
-
-<div class="review">
-<span style="color:gold;">★★★★★</span>
-Sehr flexibel und zuverlässig!
-<b>- Laura M.</b>
-</div>
-
+<div class="review">★★★★★ Sehr schnell und günstig! <b>- Yusuf K.</b></div>
+<div class="review">★★★★★ Top Service! <b>- Anna L.</b></div>
+<div class="review">★★★★★ Perfekt transportiert! <b>- Daniel S.</b></div>
+<div class="review">★★★★★ Sehr flexibel! <b>- Laura M.</b></div>
 </div>
 </div>
 
