@@ -13,6 +13,7 @@ background:#f4f7fb;
 text-align:center;
 }
 
+/* HEADER */
 header{
 background:linear-gradient(135deg,#020617,#0f172a);
 color:white;
@@ -48,6 +49,7 @@ animation:pulse 1.5s infinite;
 100%{transform:scale(1)}
 }
 
+/* CTA */
 .cta-buttons{
 margin-top:20px;
 display:flex;
@@ -68,6 +70,25 @@ color:white;
 .wa-btn{background:#25D366;}
 .mail-btn{background:#3b82f6;}
 
+/* HINT */
+.hint{
+font-size:20px;
+margin-top:30px;
+color:#0f172a;
+font-weight:bold;
+}
+
+.arrow{
+font-size:30px;
+animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(10px)}
+}
+
+/* GRID */
 .section{padding:50px 20px;}
 
 .grid{
@@ -85,10 +106,31 @@ border-radius:15px;
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
 cursor:pointer;
 transition:0.3s;
+position:relative;
 }
 
-.card:hover{transform:translateY(-8px);}
+.card:hover{
+transform:translateY(-8px);
+}
 
+/* CLICK TEXT */
+.card::after{
+content:"Zum Öffnen klicken";
+position:absolute;
+bottom:10px;
+left:50%;
+transform:translateX(-50%);
+font-size:12px;
+color:#22c55e;
+opacity:0;
+transition:0.3s;
+}
+
+.card:hover::after{
+opacity:1;
+}
+
+/* FORM */
 .form-box{
 display:none;
 background:white;
@@ -117,6 +159,7 @@ cursor:pointer;
 color:white;
 }
 
+/* FOOTER */
 footer{
 background:#020617;
 color:white;
@@ -166,11 +209,15 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 </div>
 </header>
 
-<div class="section">
-<h2>Unsere Kategorien</h2>
+<div class="hint">
+👇 Kategorie auswählen
+<div class="arrow">⬇️</div>
+</div>
 
+<div class="section">
 <div class="grid">
 
+<!-- IKEA -->
 <div>
 <div class="card" onclick="toggleForm('ikea')">
 <h3>🛒 IKEA Heerlen</h3>
@@ -186,6 +233,7 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 </div>
 </div>
 
+<!-- POCO -->
 <div>
 <div class="card" onclick="toggleForm('poco')">
 <h3>🏬 Poco Aachen</h3>
@@ -201,6 +249,7 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 </div>
 </div>
 
+<!-- KLEIN -->
 <div>
 <div class="card" onclick="toggleForm('klein')">
 <h3>📦 Kleinanzeigen</h3>
@@ -215,6 +264,7 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 </div>
 </div>
 
+<!-- UMZUG -->
 <div>
 <div class="card" onclick="toggleForm('umzug')">
 <h3>🏠 Komplett Umzug</h3>
@@ -230,6 +280,7 @@ window.open("https://wa.me/491704063762?text=" + message, "_blank");
 </div>
 </div>
 
+<!-- CUSTOM -->
 <div>
 <div class="card" onclick="toggleForm('custom')">
 <h3>🧾 Andere Möbelhäuser</h3>
